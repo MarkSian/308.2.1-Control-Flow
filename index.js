@@ -13,3 +13,14 @@ const maximumSpace = area / plantSpace;
 //math.pow(2, weeks);
 /* math operators*/
 
+function predictGrowth(weeks) {
+    let plantCount = startingPlants * Math.pow(2, weeks);
+
+    if (plantCount > maximumSpace * plantSpace) {
+        return `Week ${weeks}: Prune them (${plantCount} plants exceed 80% capacity)`;
+    }
+}
+
+
+
+console.log(predictGrowth(3));
