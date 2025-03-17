@@ -34,7 +34,7 @@ console.log(predictGrowth(1));
 // Week 1.5: Monitor them (56.5685424949238 plants are between 50% and 80% capacity)
 // Week 1: Planted (40 plants are below 50% capacity)
 
-/* Part 1: Growing Pains*/ 
+
 
 
 /* Part 2:Thinking Bigger*/ 
@@ -63,3 +63,40 @@ console.log(`The radius of the garden is ${calculateRadius} meters`);
 /* log results*/
 // The radius of the garden is 161.48286269784148 meters squared
 
+
+/* Part 3:Errors in Judgement*/ 
+// Task: Use tra and catch to wrap our code from Part 1 and handle Part 2's case.
+// Throw a new error if the plant count exceeds the maximum space
+// Write a new function for this but still access the global constants from previous parts
+
+// Function to check if the garden can accommodate the plants
+function checkGardenSpace(initialPlants) {
+    try {
+        // Calculate the total space required for the initial plants
+        const totalSpaceRequired = initialPlants * plantSpace;
+
+        // Check if the required space exceeds the available space (area)
+        if (totalSpaceRequired > area) {
+            throw new Error("Not enough space in the garden!");
+        }
+
+        // If there's enough space, log a success message
+        console.log(`The garden can accommodate ${initialPlants} plants.`);
+    } catch (error) {
+        console.error(error.message);
+
+        // Calculate the expanded radius needed to accommodate the plants
+        const newArea = initialPlants * plantSpace;
+        const newRadius = Math.sqrt(newArea / PI);
+
+        //maximumSpace from global constant
+        console.log(`The garden can only hold ${maximumSpace} plants.`);
+        console.log(`To accommodate ${initialPlants} plants, the garden radius must be expanded to ${newRadius} meters.`);
+    }
+}
+
+/* log results*/
+//The garden can only hold 98.171875 plants.
+//To accommodate 100 plants, the garden radius must be expanded to 5.046339459307546 meters.
+
+checkGardenSpace(initialPlants);
