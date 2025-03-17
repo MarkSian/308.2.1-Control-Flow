@@ -14,7 +14,7 @@ const maximumSpace = area / plantSpace;
 function predictGrowth(weeks) {
     let plantCount = startingPlants * Math.pow(2, weeks);
 
-    if (plantCount > maximumSpace * 0.8) {
+    if (plantCount > maximumSpace * plantSpace) {
         return `Week ${weeks}: Prune them (${plantCount} plants exceed 80% capacity)`;
     } else if (plantCount >= maximumSpace * 0.5) {
         return `Week ${weeks}: Monitor them (${plantCount} plants are between 50% and 80% capacity)`;
@@ -35,3 +35,8 @@ console.log(predictGrowth(1));
 // Week 1: Planted (40 plants are below 50% capacity)
 
 /* Part 1: Growing Pains*/ 
+
+
+/* Part 2:Thinking Bigger*/ 
+// Question: Given that we start with 100 plants and did not prune them for 10 weeks, what is the radius of the garden?
+
