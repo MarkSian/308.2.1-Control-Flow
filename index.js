@@ -39,4 +39,27 @@ console.log(predictGrowth(1));
 
 /* Part 2:Thinking Bigger*/ 
 // Question: Given that we start with 100 plants and did not prune them for 10 weeks, what is the radius of the garden?
+// area = pi * r^2 refactor this to solve for r. r = radius
+// r = sqrt(area/pi) *use Math.sqrt()
+// unknowns: current plant count, new plant space
+//*We can still use our global constants from Part 1 as they are accessible
+
+
+// Constants for Part 2
+const initialPlants = 100; // Starting with 100 plants instead of 20
+const weeksGrowth = 10; // 10 weeks of additional growth
+
+// Calculate the number of plants after 10 weeks of additional growth
+const plantCountGrowth = initialPlants * Math.pow(2, weeksGrowth);
+
+// Calculate the space required for the plants
+const calculateSpace = plantCountGrowth * plantSpace;
+
+// Calculate the radius of the garden given the new starting requirements
+const calculateRadius = Math.sqrt(calculateSpace / PI);
+
+console.log(`The radius of the garden is ${calculateRadius} meters`);
+
+/* log results*/
+// The radius of the garden is 161.48286269784148 meters squared
 
