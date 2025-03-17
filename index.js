@@ -58,10 +58,13 @@ const calculateSpace = plantCountGrowth * plantSpace;
 // Calculate the radius of the garden given the new starting requirements
 const calculateRadius = Math.sqrt(calculateSpace / PI);
 
+console.log(`Additional space required: ${calculateSpace} square meters`);
 console.log(`The radius of the garden is ${calculateRadius} meters`);
 
 /* log results*/
+// Additional space required: 81920 square meters
 // The radius of the garden is 161.48286269784148 meters squared
+
 
 
 /* Part 3:Errors in Judgement*/ 
